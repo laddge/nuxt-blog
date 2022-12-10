@@ -4,7 +4,14 @@
       <nuxt-link :to="'/post/' + post.slug">
         <p class="title is-4">{{ post.title }}</p>
       </nuxt-link>
-      <p class="has-text-grey is-5">{{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}</p>
+      <span class="has-text-grey is-5 icon-text">
+        <span class="icon">
+          <font-awesome-icon :icon="['far', 'calendar']" />
+        </span>
+        <span>
+          {{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}
+        </span>
+      </span>
     </div>
   </main>
 </template>
