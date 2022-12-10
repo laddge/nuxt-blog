@@ -1,8 +1,10 @@
 ---
 title: Code block test
-description: test page
 ---
 
+example of code blocks
+
+<!--more-->
 ## Python
 
 ```python

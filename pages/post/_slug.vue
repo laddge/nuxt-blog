@@ -1,8 +1,8 @@
 <template>
-  <article class="m-3 content">
+  <main class="m-3 content">
     <h1 class="title">{{ post.title }}</h1>
     <NuxtContent :document="post" />
-  </article>
+  </main>
 </template>
 
 <script>
