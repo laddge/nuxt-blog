@@ -1,13 +1,10 @@
 <template>
   <main class="m-3 content">
     <div class="box m-3" v-for="post in posts" :key="post.slug">
-    <nuxt-link class="has-text-dark" :to="'/post/' + post.slug">
-      <p class="title">{{ post.title }}</p>
-      <p class="subtitle">{{ post.description }}</p>
-      <time :datetime="post.createdAt">
-        {{ $dateFns.format(new Date(post.createdAt), 'yyyy/MM/dd') }}
-      </time>
-    </nuxt-link>
+      <nuxt-link :to="'/post/' + post.slug">
+        <p class="title is-4">{{ post.title }}</p>
+      </nuxt-link>
+      <p class="has-text-grey is-5">{{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}</p>
     </div>
   </main>
 </template>
