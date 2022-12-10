@@ -36,14 +36,14 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/date-fns',
-    ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }]
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/date-fns',
+    ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
