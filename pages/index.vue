@@ -1,17 +1,20 @@
 <template>
   <main class="m-3 content">
-    <div class="box m-3" v-for="post in posts" :key="post.slug">
-      <nuxt-link :to="'/post/' + post.slug">
-        <p class="title is-4">{{ post.title }}</p>
-      </nuxt-link>
-      <span class="has-text-grey is-5 icon-text">
-        <span class="icon">
-          <font-awesome-icon :icon="['far', 'calendar']" />
+    <Header />
+    <div class="container">
+      <div class="box m-3" v-for="post in posts" :key="post.slug">
+        <nuxt-link :to="'/post/' + post.slug">
+          <p class="title is-4">{{ post.title }}</p>
+        </nuxt-link>
+        <span class="has-text-grey is-5 icon-text">
+          <span class="icon">
+            <font-awesome-icon :icon="['far', 'calendar']" />
+          </span>
+          <span>
+            {{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}
+          </span>
         </span>
-        <span>
-          {{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}
-        </span>
-      </span>
+      </div>
     </div>
   </main>
 </template>
