@@ -58,7 +58,11 @@ export default {
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-gruvbox-dark.css'
-      }
+      },
+    remarkPlugins: (plugins) => {
+                const denyList = ['remark-autolink-headings']
+                return plugins.filter((plugin) => !denyList.includes(plugin))
+              }
     }
   },
 
