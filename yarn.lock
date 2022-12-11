@@ -983,6 +983,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.3.0"
 
+"@fortawesome/fontawesome-svg-core@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.2.1.tgz#e87e905e444b5e7b715af09b64d27b53d4c8f9d9"
+  integrity sha512-HELwwbCz6C1XEcjzyT1Jugmz2NNklMrSPjZOWMlc+ZsHIVk+XOvOXLGGQtFBwSyqfJDNgRq4xBCwWOaZ/d9DEA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
 "@fortawesome/free-brands-svg-icons@^6.2.1":
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.2.1.tgz#04a6d6f7898f7ef392aba7a65030a584d4f4c84f"
@@ -1008,6 +1015,11 @@
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.10.tgz#eeeec1e4e8850bed0468f938292b06cda793bf34"
   integrity sha512-b2+SLF31h32LSepVcXe+BQ63yvbq5qmTCy4KfFogCYm2bn68H5sDWUnX+U7MBqnM2aeEk9M7xSoqGnu+wSdY6w==
+
+"@fortawesome/vue-fontawesome@^2.0.9":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.9.tgz#7df35818135be54fd87568f16ec7b998a3d0cce8"
+  integrity sha512-tUmO92PFHbLOplitjHNBVGMJm6S57vp16tBXJVPKSI/6CfjrgLycqKxEpC6f7qsOqUdoXs5nIv4HLUfrOMHzuw==
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
