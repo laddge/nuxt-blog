@@ -12,6 +12,7 @@
     <div class="container">
       <NuxtContent :document="post" />
     </div>
+    <Footer />
   </main>
 </template>
 

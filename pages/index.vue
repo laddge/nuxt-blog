@@ -18,6 +18,7 @@
         </span>
       </div>
     </div>
+    <Footer />
   </main>
 </template>
 
