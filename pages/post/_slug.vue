@@ -12,6 +12,19 @@ export default {
     return {
       post
     }
+  },
+
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        {
+          hid: 'description',
+          property: 'description',
+          content: this.post.description
+        }
+      ]
+    }
   }
 }
 </script>

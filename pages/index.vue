@@ -23,6 +23,19 @@ export default {
     return {
       posts
     }
+  },
+
+  head () {
+    return {
+      title: 'Home',
+      meta: [
+        {
+          hid: 'description',
+          property: 'description',
+          content: 'Linux大好き高校生'
+        }
+      ]
+    }
   }
 }
 </script>
