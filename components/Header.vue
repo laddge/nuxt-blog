@@ -25,6 +25,23 @@
         <nuxt-link class="navbar-item" to="/about">
           About
         </nuxt-link>
+        <div class="navbar-item mt-2">
+          <a :href="'https://github.com/' + this.github" target="_blank">
+            <span class="icon has-text-dark mx-1 is-size-5">
+              <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+            </span>
+          </a>
+          <a :href="'https://twitter.com/' + this.twitter" target="_blank">
+            <span class="icon has-text-dark mx-1 is-size-5">
+              <font-awesome-icon :icon="['fab', 'twitter']" size="lg" />
+            </span>
+          </a>
+          <a :href="'https://instagram.com/' + this.instagram" target="_blank">
+            <span class="icon has-text-dark mx-1 is-size-5">
+              <font-awesome-icon :icon="['fab', 'instagram']" size="lg" />
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -32,6 +49,13 @@
 
 <script>
 export default {
+  data () {
+    return {
+      github: 'laddge',
+      twitter: 'laddge_',
+      instagram: 'laddge_'
+    }
+  },
   methods: {
     toggleBurger (event) {
       event.target.classList.toggle('is-active')

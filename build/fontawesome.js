@@ -7,6 +7,9 @@ const regular = [
 ]
 
 const brands = [
+  'faGithub',
+  'faTwitter',
+  'faInstagram'
 ]
 
 export { solid, regular, brands }
