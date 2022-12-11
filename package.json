@@ -23,6 +23,7 @@
     "bulma": "^0.9.4",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "nuxt-content-git": "^2.0.14",
     "prism-themes": "^1.9.0",
     "sass": "^1.56.2",
     "sass-loader": "10",

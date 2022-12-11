@@ -41,6 +41,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-content-git',
     '@nuxt/content',
     '@nuxtjs/date-fns',
     ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }]
