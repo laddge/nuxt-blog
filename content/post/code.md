@@ -1,5 +1,6 @@
 ---
 title: Code block test
+category: Tech
 ---
 
 example of code blocks

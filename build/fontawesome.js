@@ -2,7 +2,8 @@ const solid = [
 ]
 
 const regular = [
-  'faCalendar'
+  'faCalendar',
+  'faFolder'
 ]
 
 const brands = [

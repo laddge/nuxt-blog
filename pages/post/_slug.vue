@@ -8,6 +8,16 @@
       <p class="subtitle has-text-grey has-text-weight-light mt-5">
         {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
       </p>
+      <p>
+        <span class="has-text-grey is-5 icon-text">
+          <span class="icon">
+            <font-awesome-icon :icon="['far', 'folder']" />
+          </span>
+          <span>
+            {{ post.category ? post.category : '未分類' }}
+          </span>
+        </span>
+      </p>
     </div>
     <div class="container">
       <NuxtContent :document="post" />
