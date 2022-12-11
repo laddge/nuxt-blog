@@ -49,7 +49,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-        "postcss-custom-properties": false
+        'postcss-custom-properties': false
       }
     }
   },

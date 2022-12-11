@@ -2,9 +2,11 @@
   <main class="m-3 content">
     <Header />
     <div class="container">
-      <div class="box m-3" v-for="post in posts" :key="post.slug">
+      <div v-for="post in posts" :key="post.slug" class="box m-3">
         <nuxt-link :to="'/post/' + post.slug">
-          <p class="title is-4">{{ post.title }}</p>
+          <p class="title is-4">
+            {{ post.title }}
+          </p>
         </nuxt-link>
         <span class="has-text-grey is-5 icon-text">
           <span class="icon">

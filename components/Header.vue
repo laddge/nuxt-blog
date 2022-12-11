@@ -4,10 +4,17 @@
       <nuxt-link class="navbar-item" to="/">
         <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1670726722/blog/brand.png" height="28">
       </nuxt-link>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarHeader" @click="toggleBurger($event)">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarHeader"
+        @click="toggleBurger($event)"
+      >
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
       </a>
     </div>
     <div id="navbarHeader" class="navbar-menu">
