@@ -18,10 +18,9 @@
           </span>
         </span>
       </p>
-      <p class="mt-2" v-if="post.tags">
-        <div class="tag mx-1" v-for="tag in post.tags" :key="tag">
-          {{ tag }}
-        </div>
+      <p v-if="post.tags" class="mt-2" /><div v-for="tag in post.tags" :key="tag" class="tag mx-1">
+        {{ tag }}
+      </div>
       </p>
     </div>
     <div class="container">

@@ -1,4 +1,5 @@
 const solid = [
+  'faMagnifyingGlass'
 ]
 
 const regular = [

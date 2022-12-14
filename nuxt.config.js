@@ -59,10 +59,10 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-gruvbox-dark.css'
       },
-    remarkPlugins: (plugins) => {
-                const denyList = ['remark-autolink-headings']
-                return plugins.filter((plugin) => !denyList.includes(plugin))
-              }
+      remarkPlugins: (plugins) => {
+        const denyList = ['remark-autolink-headings']
+        return plugins.filter(plugin => !denyList.includes(plugin))
+      }
     }
   },
 
