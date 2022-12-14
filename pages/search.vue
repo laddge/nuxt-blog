@@ -24,6 +24,18 @@
             </span>
           </p>
         </div>
+        <div v-if="tags.length != 0">
+          <hr class="has-background-grey-light">
+          <p>タグ:</p>
+          <div style="display: flex; flex-wrap: wrap;">
+            <div v-for="tag in tags" :key="tag" class="mx-3">
+              <label>
+                <input v-model="query.tags" type="checkbox" :value="tag">
+                {{ tag }}
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
       <PostsList :posts="posts" />
     </div>
@@ -34,12 +46,20 @@
 <script>
 export default {
   data () {
+    let tags = this.$route.query.tags
+    if (!tags) {
+      tags = []
+    } else if (typeof tags === 'string') {
+      tags = [tags]
+    }
     return {
       posts: [],
       categories: [],
+      tags: [],
       query: {
         q: this.$route.query.q,
-        category: this.$route.query.category
+        category: this.$route.query.category,
+        tags
       }
     }
   },
@@ -63,11 +83,17 @@ export default {
       } else {
         uncategorized = true
       }
+      if (post.tags) {
+        post.tags.forEach((tag) => {
+          this.tags.push(tag)
+        })
+      }
     })
     if (uncategorized) {
       this.categories.push('未分類')
     }
     this.categories = [...new Set(this.categories)]
+    this.tags = [...new Set(this.tags)]
     if (!this.categories.includes(this.query.category)) {
       this.query.category = ''
     }
@@ -84,6 +110,12 @@ export default {
       })
       if (this.query.category) {
         posts = posts.filter(post => post.category === this.query.category)
+      }
+      if (this.query.tags.length !== 0) {
+        posts = posts.filter(post => post.tags)
+        this.query.tags.forEach((tag) => {
+          posts = posts.filter(post => post.tags.includes(tag))
+        })
       }
       this.posts = posts
     }

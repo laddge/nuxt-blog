@@ -28,7 +28,9 @@
       </div>
       <div v-if="post.tags" class="tags mt-2">
         <div v-for="tag in post.tags" :key="tag" class="tag">
-          {{ tag }}
+          <nuxt-link :to="'/search?tags=' + tag" class="has-text-dark">
+            {{ tag }}
+          </nuxt-link>
         </div>
       </div>
     </div>
