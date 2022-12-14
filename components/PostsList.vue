@@ -37,6 +37,11 @@
 
 <script>
 export default {
-  props: ['posts']
+  props: {
+    posts: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>

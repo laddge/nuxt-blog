@@ -13,7 +13,7 @@
         </p>
         <div class="field has-addons">
           <p class="control is-expanded">
-            <input class="input" placeholder="キーワード" v-model="query.q">
+            <input v-model="query.q" class="input" placeholder="キーワード">
           </p>
           <p class="control">
             <span class="select">
@@ -44,19 +44,13 @@ export default {
     }
   },
 
-  methods: {
-    async render () {
-      let posts = await this.$content('post').search(this.$route.query.q).sortBy('createdAt', 'desc').fetch()
-      posts.forEach((post, i, arr) => {
-        if (!post.category) {
-          arr[i].category = '未分類'
-        }
-      })
-      if (this.query.category) {
-        posts = posts.filter(post => post.category === this.query.category)
-      }
-      this.posts = posts
-      console.log(this.posts)
+  watch: {
+    query: {
+      async handler (query) {
+        this.$router.replace({ query })
+        await this.render()
+      },
+      deep: true
     }
   },
 
@@ -80,13 +74,18 @@ export default {
     await this.render()
   },
 
-  watch: {
-    query: {
-      async handler (query) {
-        this.$router.replace({ query })
-        await this.render()
-      },
-      deep: true
+  methods: {
+    async render () {
+      let posts = await this.$content('post').search(this.$route.query.q).sortBy('createdAt', 'desc').fetch()
+      posts.forEach((post, i, arr) => {
+        if (!post.category) {
+          arr[i].category = '未分類'
+        }
+      })
+      if (this.query.category) {
+        posts = posts.filter(post => post.category === this.query.category)
+      }
+      this.posts = posts
     }
   }
 }
