@@ -11,7 +11,19 @@
             <span>Search</span>
           </span>
         </p>
-        <input class="input is-primary" placeholder="Search" v-model="query.q">
+        <div class="field has-addons">
+          <p class="control is-expanded">
+            <input class="input" placeholder="キーワード" v-model="query.q">
+          </p>
+          <p class="control">
+            <span class="select">
+              <select v-model="query.category">
+                <option value="" selected>カテゴリー</option>
+                <option v-for="cat in categories" :key="cat">{{ cat }}</option>
+              </select>
+            </span>
+          </p>
+        </div>
       </div>
       <PostsList :posts="posts" />
     </div>
@@ -23,22 +35,56 @@
 export default {
   data () {
     return {
-      posts: {},
+      posts: [],
+      categories: [],
       query: {
-        q: this.$route.query.q
+        q: this.$route.query.q,
+        category: this.$route.query.category
       }
     }
   },
 
+  methods: {
+    async render () {
+      let posts = await this.$content('post').search(this.$route.query.q).sortBy('createdAt', 'desc').fetch()
+      posts.forEach((post, i, arr) => {
+        if (!post.category) {
+          arr[i].category = '未分類'
+        }
+      })
+      if (this.query.category) {
+        posts = posts.filter(post => post.category === this.query.category)
+      }
+      this.posts = posts
+      console.log(this.posts)
+    }
+  },
+
   async mounted () {
-    this.posts = await this.$content('post').search('title', this.$route.query.q).sortBy('createdAt', 'desc').fetch()
+    const posts = await this.$content('post').sortBy('createdAt', 'desc').fetch()
+    let uncategorized = false
+    posts.forEach((post) => {
+      if (post.category) {
+        this.categories.push(post.category)
+      } else {
+        uncategorized = true
+      }
+    })
+    if (uncategorized) {
+      this.categories.push('未分類')
+    }
+    this.categories = [...new Set(this.categories)]
+    if (!this.categories.includes(this.query.category)) {
+      this.query.category = ''
+    }
+    await this.render()
   },
 
   watch: {
     query: {
       async handler (query) {
         this.$router.replace({ query })
-        this.posts = await this.$content('post').search(query.q).sortBy('createdAt', 'desc').fetch()
+        await this.render()
       },
       deep: true
     }

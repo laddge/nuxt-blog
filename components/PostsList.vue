@@ -15,14 +15,16 @@
             {{ $dateFns.format(new Date(post.createdAt), 'MMM dd yyyy') }}
           </span>
         </span>
-        <span class="has-text-grey is-5 icon-text mr-3">
-          <span class="icon">
-            <font-awesome-icon :icon="['far', 'folder']" />
+        <nuxt-link :to="'/search?category=' + post.category">
+          <span class="has-text-grey is-5 icon-text mr-3">
+            <span class="icon">
+              <font-awesome-icon :icon="['far', 'folder']" />
+            </span>
+            <span>
+              {{ post.category }}
+            </span>
           </span>
-          <span>
-            {{ post.category ? post.category : '未分類' }}
-          </span>
-        </span>
+        </nuxt-link>
       </div>
       <div v-if="post.tags" class="tags mt-2">
         <div v-for="tag in post.tags" :key="tag" class="tag">
