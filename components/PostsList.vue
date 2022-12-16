@@ -7,7 +7,7 @@
         </p>
       </nuxt-link>
       <div>
-        <span class="has-text-grey is-5 icon-text mr-3">
+        <span class="has-text-grey is-5 icon-text px-1">
           <span class="icon">
             <font-awesome-icon :icon="['far', 'calendar']" />
           </span>
@@ -16,7 +16,7 @@
           </span>
         </span>
         <nuxt-link :to="'/search?category=' + post.category">
-          <span class="has-text-grey is-5 icon-text mr-3">
+          <span class="has-text-grey is-5 icon-text px-1">
             <span class="icon">
               <font-awesome-icon :icon="['far', 'folder']" />
             </span>

@@ -9,19 +9,24 @@
         {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
       </p>
       <p>
+        <nuxt-link :to="'/search?category=' + post.category">
         <span class="has-text-grey is-5 icon-text">
           <span class="icon">
             <font-awesome-icon :icon="['far', 'folder']" />
           </span>
           <span>
-            {{ post.category ? post.category : '未分類' }}
+            {{ post.category }}
           </span>
         </span>
+        </nuxt-link>
       </p>
-      <p v-if="post.tags" class="mt-2" /><div v-for="tag in post.tags" :key="tag" class="tag mx-1">
-        {{ tag }}
+      <div v-if="post.tags" class="mt-2">
+        <div v-for="tag in post.tags" :key="tag" class="tag mx-1">
+          <nuxt-link :to="'/search?tags=' + tag" class="has-text-dark">
+            {{ tag }}
+          </nuxt-link>
+        </div>
       </div>
-      </p>
     </div>
     <div class="container">
       <NuxtContent :document="post" />
@@ -34,6 +39,9 @@
 export default {
   async asyncData ({ $content, params }) {
     const post = await $content('post', params.slug).fetch()
+    if (!post.category) {
+      post.category = '未分類'
+    }
     return {
       post
     }
