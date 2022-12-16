@@ -12,11 +12,11 @@
 export default {
   async asyncData ({ $content }) {
     const posts = await $content('post').sortBy('createdAt', 'desc').fetch()
-    posts.forEach((post, i, arr) => {
+    for (const post of posts) {
       if (!post.category) {
-        arr[i].category = '未分類'
+        post.category = '未分類'
       }
-    })
+    }
     return {
       posts
     }

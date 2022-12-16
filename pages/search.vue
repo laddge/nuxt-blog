@@ -70,18 +70,18 @@ export default {
   async mounted () {
     const posts = await this.$content('post').sortBy('createdAt', 'desc').fetch()
     let uncategorized = false
-    posts.forEach((post) => {
+    for (const post of posts) {
       if (post.category) {
         this.categories.push(post.category)
       } else {
         uncategorized = true
       }
       if (post.tags) {
-        post.tags.forEach((tag) => {
+        for (const tag of post.tags) {
           this.tags.push(tag)
-        })
+        }
       }
-    })
+    }
     if (uncategorized) {
       this.categories.push('未分類')
     }
@@ -116,19 +116,19 @@ export default {
         tags
       }
       let posts = await this.$content('post').search(this.$route.query.q).sortBy('createdAt', 'desc').fetch()
-      posts.forEach((post, i, arr) => {
+      for (const post of posts) {
         if (!post.category) {
-          arr[i].category = '未分類'
+          post.category = '未分類'
         }
-      })
+      }
       if (this.query.category) {
         posts = posts.filter(post => post.category === this.query.category)
       }
       if (this.query.tags.length !== 0) {
         posts = posts.filter(post => post.tags)
-        this.query.tags.forEach((tag) => {
+        for (const tag of this.query.tags) {
           posts = posts.filter(post => post.tags.includes(tag))
-        })
+        }
       }
       this.posts = posts
     }
