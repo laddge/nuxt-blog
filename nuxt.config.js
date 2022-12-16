@@ -54,6 +54,10 @@ export default {
     }
   },
 
+  generate: {
+    fallback: true
+  },
+
   content: {
     markdown: {
       prism: {
