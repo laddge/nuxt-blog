@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="post in posts" :key="post.slug" class="box m-3">
+    <div v-for="post in posts" :key="post.slug" class="m-3 p-5">
       <nuxt-link :to="'/post/' + post.slug">
         <p class="title is-4 mb-2">
           {{ post.title }}
@@ -27,8 +27,8 @@
         </nuxt-link>
       </div>
       <div v-if="post.tags" class="tags mt-2">
-        <div v-for="tag in post.tags" :key="tag" class="tag">
-          <nuxt-link :to="'/search?tags=' + tag" class="has-text-dark">
+        <div v-for="tag in post.tags" :key="tag" class="tag is-rounded is-info is-light">
+          <nuxt-link :to="'/search?tags=' + tag" class="has-text-info-dark">
             {{ tag }}
           </nuxt-link>
         </div>

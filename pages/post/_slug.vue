@@ -21,8 +21,8 @@
         </nuxt-link>
       </p>
       <div v-if="post.tags" class="mt-2">
-        <div v-for="tag in post.tags" :key="tag" class="tag mx-1">
-          <nuxt-link :to="'/search?tags=' + tag" class="has-text-dark">
+        <div v-for="tag in post.tags" :key="tag" class="tag is-rounded is-info is-light mx-1">
+          <nuxt-link :to="'/search?tags=' + tag" class="has-text-info-dark">
             {{ tag }}
           </nuxt-link>
         </div>
