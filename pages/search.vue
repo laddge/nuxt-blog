@@ -46,29 +46,22 @@
 <script>
 export default {
   data () {
-    let tags = this.$route.query.tags
-    if (!tags) {
-      tags = []
-    } else if (typeof tags === 'string') {
-      tags = [tags]
-    }
     return {
+      allPosts: [],
       posts: [],
       categories: [],
       tags: [],
-      query: {
-        q: this.$route.query.q,
-        category: this.$route.query.category,
-        tags
-      }
+      query: {},
+      lock: false
     }
   },
 
   watch: {
     query: {
-      async handler (query) {
-        this.$router.replace({ query })
-        await this.render()
+      handler (query) {
+        if (!this.lock) {
+          this.$router.replace({ query })
+        }
       },
       deep: true
     }
@@ -94,14 +87,34 @@ export default {
     }
     this.categories = [...new Set(this.categories)]
     this.tags = [...new Set(this.tags)]
-    if (!this.categories.includes(this.query.category)) {
-      this.query.category = ''
-    }
     await this.render()
+    this.$watch(
+      () => this.$route.query,
+      async (toParams, previousParams) => {
+        this.lock = true
+        await this.render()
+        this.lock = false
+      }
+    )
   },
 
   methods: {
     async render () {
+      let category = this.$route.query.category
+      if (!this.categories.includes(category)) {
+        category = ''
+      }
+      let tags = this.$route.query.tags
+      if (!tags) {
+        tags = []
+      } else if (typeof tags === 'string') {
+        tags = [tags]
+      }
+      this.query = {
+        q: this.$route.query.q,
+        category,
+        tags
+      }
       let posts = await this.$content('post').search(this.$route.query.q).sortBy('createdAt', 'desc').fetch()
       posts.forEach((post, i, arr) => {
         if (!post.category) {
