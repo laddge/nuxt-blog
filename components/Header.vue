@@ -53,15 +53,6 @@ export default {
         { icon: 'instagram', url: 'https://instagram.com/laddge_' }
       ]
     }
-  },
-  methods: {
-    toggleBurger (event) {
-      event.target.classList.toggle('is-active')
-      const target = document.getElementById(event.target.dataset.target)
-      if (target) {
-        target.classList.toggle('is-active')
-      }
-    }
   }
 }
 </script>
