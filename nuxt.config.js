@@ -34,6 +34,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-purgecss',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module'
   ],
@@ -57,6 +58,21 @@ export default {
 
   generate: {
     fallback: true
+  },
+
+  purgeCSS: {
+    whitelist: [
+      'collapsing'
+    ],
+    whitelistPatterns: [
+      /svg.*/,
+      /fa.*/
+    ],
+    whitelistPatternsChildren: [
+      /^token/,
+      /^pre/,
+      /^code/
+    ]
   },
 
   content: {
