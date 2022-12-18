@@ -1,38 +1,32 @@
 <template>
-  <main class="m-3 content">
+  <div>
     <Header />
-    <div class="my-6 has-text-centered">
-      <h1 class="title has-text-weight-normal">
+    <div class="my-5 text-center">
+      <h1 class="fw-normal">
         {{ post.title }}
       </h1>
-      <p class="subtitle has-text-grey has-text-weight-light mt-5">
+      <p class="text-secondary fs-5 fw-light mt-3">
         {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
       </p>
       <p>
-        <nuxt-link :to="'/search?category=' + post.category">
-        <span class="has-text-grey is-5 icon-text">
-          <span class="icon">
-            <font-awesome-icon :icon="['far', 'folder']" />
-          </span>
-          <span>
-            {{ post.category }}
-          </span>
-        </span>
+        <nuxt-link :to="'/search?category=' + post.category" class="link-reset text-secondary">
+          <font-awesome-icon :icon="['far', 'folder']" />
+          {{ post.category }}
         </nuxt-link>
       </p>
-      <div v-if="post.tags" class="mt-2">
-        <div v-for="tag in post.tags" :key="tag" class="tag is-rounded is-info is-light mx-1">
-          <nuxt-link :to="'/search?tags=' + tag" class="has-text-info-dark">
+      <div v-if="post.tags" class="mt-1">
+        <nuxt-link v-for="tag in post.tags" :key="tag" :to="'/search?tags=' + tag" class="link-reset">
+          <div class="badge bg-primary-light rounded-pill text-primary-dark mx-1 fw-normal">
             {{ tag }}
-          </nuxt-link>
-        </div>
+          </div>
+        </nuxt-link>
       </div>
     </div>
     <div class="container">
       <NuxtContent :document="post" />
     </div>
     <Footer />
-  </main>
+  </div>
 </template>
 
 <script>

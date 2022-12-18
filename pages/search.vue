@@ -1,36 +1,29 @@
 <template>
-  <main class="m-3 content">
+  <div>
     <Header />
     <div class="container">
-      <div class="notification p-5">
-        <p class="title mt-5 has-text-centered">
-          <span class="icon-text">
-            <span class="icon">
-              <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-            </span>
-            <span>Search</span>
-          </span>
+      <div class="bg-light rounded p-4">
+        <p class="fs-1 fw-bold mt-4 text-center">
+          <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+          Search
         </p>
-        <div class="field has-addons">
-          <p class="control is-expanded">
-            <input v-model="query.q" class="input" placeholder="キーワード">
-          </p>
-          <p class="control">
-            <span class="select">
-              <select v-model="query.category">
-                <option value="" selected>カテゴリー</option>
-                <option v-for="cat in categories" :key="cat">{{ cat }}</option>
-              </select>
-            </span>
-          </p>
+        <div class="input-group mt-4">
+          <input v-model="query.q" class="form-control shadow-none" placeholder="キーワード">
+          <select v-model="query.category" class="form-select flex-grow-0 shadow-none" style="width: 9rem;">
+            <option value="" selected>
+              カテゴリー
+            </option>
+            <option v-for="cat in categories" :key="cat">
+              {{ cat }}
+            </option>
+          </select>
         </div>
-        <div v-if="tags.length != 0">
-          <hr class="has-background-grey-light">
+        <div v-if="tags.length != 0" class="border-top border-2 mt-4 pt-3">
           <p>タグ:</p>
           <div style="display: flex; flex-wrap: wrap;">
-            <div v-for="tag in tags" :key="tag" class="mx-3">
-              <label>
-                <input v-model="query.tags" type="checkbox" :value="tag">
+            <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
+              <label class="form-check-label">
+                <input v-model="query.tags" type="checkbox" :value="tag" class="form-check-input shadow-none">
                 {{ tag }}
               </label>
             </div>
@@ -40,7 +33,7 @@
       <PostsList :posts="posts" />
     </div>
     <Footer />
-  </main>
+  </div>
 </template>
 
 <script>

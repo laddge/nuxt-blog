@@ -1,11 +1,11 @@
 <template>
-  <main class="m-3 content">
+  <div>
     <Header />
-    <div class="container">
+    <div class="mx-3">
       <PostsList :posts="posts" />
     </div>
     <Footer />
-  </main>
+  </div>
 </template>
 
 <script>
