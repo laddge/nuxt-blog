@@ -1,5 +1,3 @@
-import * as FontAwesome from './build/fontawesome'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -89,9 +87,18 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: FontAwesome.solid,
-      regular: FontAwesome.regular,
-      brands: FontAwesome.brands
+      solid: [
+        'faMagnifyingGlass'
+      ],
+      regular: [
+        'faCalendar',
+        'faFolder'
+      ],
+      brands: [
+        'faGithub',
+        'faTwitter',
+        'faInstagram'
+      ]
     }
   }
 }
