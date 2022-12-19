@@ -27,8 +27,7 @@ export default {
       title: 'Home',
       meta: [
         {
-          hid: 'description',
-          property: 'description',
+          name: 'description',
           content: 'Linux大好き高校生'
         }
       ]

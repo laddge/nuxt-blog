@@ -38,6 +38,7 @@
 
 <script>
 export default {
+
   data () {
     return {
       allPosts: [],
@@ -46,6 +47,17 @@ export default {
       tags: [],
       query: {},
       lock: false
+    }
+  },
+  head () {
+    return {
+      title: 'Search',
+      meta: [
+        {
+          name: 'description',
+          content: 'Linux大好き高校生'
+        }
+      ]
     }
   },
 

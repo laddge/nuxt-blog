@@ -46,8 +46,7 @@ export default {
       title: this.post.title,
       meta: [
         {
-          hid: 'description',
-          property: 'description',
+          name: 'description',
           content: this.post.description ? this.post.description : 'Linux大好き高校生'
         }
       ]
