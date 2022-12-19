@@ -1,3 +1,1 @@
-import bootstrap from '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
-
-export default bootstrap
+import '../node_modules/bootstrap/js/dist/collapse'
