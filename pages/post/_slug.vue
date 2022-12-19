@@ -48,7 +48,7 @@ export default {
         {
           hid: 'description',
           property: 'description',
-          content: this.post.description
+          content: this.post.description ? this.post.description : 'Linux大好き高校生'
         }
       ]
     }
