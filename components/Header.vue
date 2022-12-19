@@ -5,7 +5,7 @@
         <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1670726722/blog/brand.png" height="28">
       </nuxt-link>
       <button
-        class="navbar-toggler mb-3 border-0 shadow-none"
+        class="navbar-toggler mb-3 border-0 shadow-none text-secondary"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#headerNavContent"
@@ -13,7 +13,8 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon" />
+        <font-awesome-icon :icon="['fas', 'bars']" size="lg" />
+        <font-awesome-icon :icon="['fas', 'xmark']" size="lg" />
       </button>
       <div id="headerNavContent" class="collapse navbar-collapse bg-light bg-lg-none px-3 rounded">
         <ul class="navbar-nav ms-auto my-2 my-lg-0">

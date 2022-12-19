@@ -88,6 +88,8 @@ export default {
   fontawesome: {
     icons: {
       solid: [
+        'faBars',
+        'faXmark',
         'faMagnifyingGlass'
       ],
       regular: [

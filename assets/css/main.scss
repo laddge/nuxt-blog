@@ -30,3 +30,12 @@ h2 {
 .badge {
   padding: 0.5em 0.75em;
 }
+
+.navbar-toggler {
+  .fa-bars { display: inherit; }
+  .fa-xmark { display: none; }
+  &[aria-expanded='true'] {
+    .fa-bars { display: none; }
+    .fa-xmark { display: inherit; }
+  }
+}
