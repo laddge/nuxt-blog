@@ -137,10 +137,12 @@ uuid生成サイトを使ってお手軽に生成しました。
 ## 実装
 いざいざ、実装していきます。
 
-:::note warn
+<note color="warning">
+
 一応ソースコードは[GitHub](https://github.com/laddge/classmatch_site)に上げてありますが、急いで作ってたのもあり、「動けばいいや〜」って感じでゴチャゴチャしてるので、この記事では細かいコードの説明はあまりせずに、おおまかなアイデア的なのを載せられたらと思います。
 質問があれば、遠慮なくコメントか、TwitterのDMできいてください。
-:::
+
+</note>
 
 https://github.com/laddge/classmatch_site
 
