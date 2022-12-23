@@ -21,6 +21,18 @@
           </div>
         </nuxt-link>
       </div>
+      <div v-if="post.toc.filter(t => { return t.depth <= 2 }).length > 2" class="bg-light rounded mt-4 px-5 py-3 d-inline-block">
+        <p class="fw-bold mb-2">
+          - Table of Contents -
+        </p>
+        <ol class="mb-0 text-start">
+          <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id">
+            <a :href="'#' + t.id" class="link-reset">
+              {{ t.text }}
+            </a>
+          </li>
+        </ol>
+      </div>
     </div>
     <div class="container text-break">
       <NuxtContent :document="post" />

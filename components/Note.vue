@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<style scoped>
-.note p:last-child {
-  margin-bottom: 0;
-}
-</style>
-
 <script>
 export default {
   props: {
@@ -20,3 +14,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.note p:last-child {
+  margin-bottom: 0;
+}
+</style>
