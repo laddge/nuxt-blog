@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="my-5 text-center">
+    <div class="my-5 text-center px-5 text-break">
       <h1 class="fw-normal">
         {{ post.title }}
       </h1>
@@ -22,7 +22,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div class="container">
+    <div class="container text-break">
       <NuxtContent :document="post" />
     </div>
     <Footer />

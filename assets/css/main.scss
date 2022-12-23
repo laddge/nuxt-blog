@@ -43,10 +43,6 @@ $secondary: #7a7a7a;
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
-h2 {
-  padding-top: 1rem;
-}
-
 @include media-breakpoint-up(lg) {
   .bg-lg-none {
     background-color: transparent !important;
@@ -77,5 +73,24 @@ h2 {
   &[aria-expanded='true'] {
     .fa-bars { display: none; }
     .fa-xmark { display: inherit; }
+  }
+}
+
+.nuxt-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1.5em 0 1em 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  blockquote {
+    margin-left: 0.5rem;
+    padding: 1rem;
+    border-left: 2px solid $secondary;
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }

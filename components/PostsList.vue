@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container text-break">
     <div v-for="post in posts" :key="post.slug" class="my-2 px-3 py-4">
       <nuxt-link :to="'/post/' + post.slug" class="link-reset">
         <p class="h3">
