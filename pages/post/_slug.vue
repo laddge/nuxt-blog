@@ -27,9 +27,9 @@
         </p>
         <ol class="mb-0 text-start">
           <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id">
-            <a :href="'#' + t.id" class="link-reset">
+            <nuxt-link :to="{ hash: '#' + t.id }" class="link-reset">
               {{ t.text }}
-            </a>
+            </nuxt-link>
           </li>
         </ol>
       </div>
