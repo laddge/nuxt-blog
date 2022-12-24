@@ -61,6 +61,15 @@ $secondary: #7a7a7a;
   .text-#{$name}-dark {
     color: darken($color, 15%);
   }
+  .btn-#{$name}-light {
+    --bs-btn-color: #{darken($color, 15%)};
+    --bs-btn-bg: #{lighten($color, 45%)};
+    --bs-btn-border-width: 0;
+    --bs-btn-hover-color: #{darken($color, 15%)};
+    --bs-btn-hover-bg: #{shade-color(lighten($color, 45%), 5%)};
+    --bs-btn-active-color: #{darken($color, 15%)};
+    --bs-btn-active-bg: #{shade-color(lighten($color, 45%), 10%)};
+  }
 }
 
 .badge {

@@ -9,4 +9,4 @@ description: test page
     This is a test page.
 </div>
 
-<button class="btn btn-primary bg-primary-light text-primary-dark border-0">Button</button>
+<button class="btn btn-primary-light border-0">Button</button>

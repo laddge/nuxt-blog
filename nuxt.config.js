@@ -74,7 +74,9 @@ export default {
       solid: [
         'faBars',
         'faXmark',
-        'faMagnifyingGlass'
+        'faMagnifyingGlass',
+        'faChevronLeft',
+        'faChevronRight'
       ],
       regular: [
         'faCalendar',

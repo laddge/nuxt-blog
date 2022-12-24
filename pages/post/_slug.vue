@@ -37,6 +37,28 @@
     <div class="container text-break">
       <NuxtContent :document="post" />
     </div>
+    <div v-if="prev || next" class="border-top border-bottom mt-5 mx-3 pb-3 d-flex flex-wrap">
+      <nuxt-link v-if="next" :to="'/post/' + next.slug" class="link-reset d-block mt-3">
+        <div class="btn btn-primary-light border-0 d-inline-flex align-items-center">
+          <div>
+            <font-awesome-icon :icon="['fas', 'chevron-left']" />
+          </div>
+          <div class="ms-2">
+            {{ next.title }}
+          </div>
+        </div>
+      </nuxt-link>
+      <nuxt-link v-if="prev" :to="'/post/' + prev.slug" class="link-reset d-block mt-3 ms-auto">
+        <div class="btn btn-primary-light d-inline-flex align-items-center">
+          <div>
+            {{ prev.title }}
+          </div>
+          <div class="ms-2">
+            <font-awesome-icon :icon="['fas', 'chevron-right']" />
+          </div>
+        </div>
+      </nuxt-link>
+    </div>
     <Footer />
   </div>
 </template>
@@ -48,8 +70,15 @@ export default {
     if (!post.category) {
       post.category = '未分類'
     }
+    const [prev, next] = await $content('post')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
     return {
-      post
+      post,
+      prev,
+      next
     }
   },
 
