@@ -16,7 +16,7 @@
         <font-awesome-icon :icon="['fas', 'bars']" size="lg" />
         <font-awesome-icon :icon="['fas', 'xmark']" size="lg" />
       </button>
-      <div id="headerNavContent" class="collapse navbar-collapse bg-light bg-lg-none px-3 rounded">
+      <div id="headerNavContent" class="collapse navbar-collapse bg-lg-none px-3 rounded">
         <ul class="navbar-nav ms-auto my-2 my-lg-0">
           <li class="nav-item">
             <nuxt-link class="nav-link text-dark" to="/">
@@ -57,3 +57,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#headerNavContent {
+  background-color: rgba(179, 189, 200, 10%)
+}
+</style>
