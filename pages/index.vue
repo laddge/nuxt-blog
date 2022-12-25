@@ -21,11 +21,18 @@
       </div>
     </div>
     <div class="bg-primary-light pt-4">
-      <div class="px-3 pt-3 top-rounded bg-white">
+      <div class="px-3 py-3 top-rounded bg-white">
         <h2 class="text-center mb-4">
           最近の投稿
         </h2>
         <PostsList :posts="posts" />
+        <div class="text-center">
+          <nuxt-link to="/search">
+            <button class="btn btn-primary-light">
+              もっと見る
+            </button>
+          </nuxt-link>
+        </div>
       </div>
     </div>
     <Footer />
@@ -35,7 +42,7 @@
 <script>
 export default {
   async asyncData ({ $content }) {
-    const posts = await $content('post').sortBy('createdAt', 'desc').fetch()
+    const posts = await $content('post').sortBy('createdAt', 'desc').limit(5).fetch()
     for (const post of posts) {
       if (!post.category) {
         post.category = '未分類'

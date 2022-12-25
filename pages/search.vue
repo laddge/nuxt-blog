@@ -2,30 +2,36 @@
   <div>
     <Header />
     <div class="container">
-      <div class="bg-light rounded p-4">
-        <p class="fs-1 fw-bold mt-4 text-center">
-          <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-          Search
-        </p>
-        <div class="input-group mt-4">
-          <input v-model="query.q" class="form-control shadow-none" placeholder="キーワード">
-          <select v-model="query.category" class="form-select flex-grow-0 shadow-none" style="width: 9rem;">
-            <option value="" selected>
-              カテゴリー
-            </option>
-            <option v-for="cat in categories" :key="cat">
-              {{ cat }}
-            </option>
-          </select>
-        </div>
-        <div v-if="tags.length != 0" class="border-top border-2 mt-4 pt-3">
-          <p>タグ:</p>
-          <div style="display: flex; flex-wrap: wrap;">
-            <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
-              <label class="form-check-label">
-                <input v-model="query.tags" type="checkbox" :value="tag" class="form-check-input shadow-none">
-                {{ tag }}
-              </label>
+      <div class="mx-3 mb-4">
+        <label class="input-icon-label border rounded-pill row align-items-center mx-2">
+          <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="col-auto fs-5 text-secondary" />
+          <input v-model="query.q" class="form-control shadow-none border-0 fs-5 ps-0 py-1 col" placeholder="検索" style="background-color: transparent;">
+        </label>
+        <div class="border-top border-bottom mt-4 px-2 py-3" v-if="categories.length + tags.length != 0">
+          <div v-if="categories.length != 0">
+            <p>カテゴリー:</p>
+            <div style="display: flex; flex-wrap: wrap;">
+              <div class="form-check">
+                <label class="form-check-label mx-3">
+                  <input type="radio" class="form-check-input shadow-none" value="" checked v-model="query.category">
+                  未選択
+                </label>
+                <label class="form-check-label mx-3" v-for="cat in categories" :key="cat">
+                  <input type="radio" class="form-check-input shadow-none" :value="cat" checked v-model="query.category">
+                  {{ cat }}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div v-if="tags.length != 0" class="mt-3">
+            <p>タグ:</p>
+            <div style="display: flex; flex-wrap: wrap;">
+              <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
+                <label class="form-check-label">
+                  <input v-model="query.tags" type="checkbox" :value="tag" class="form-check-input shadow-none">
+                  {{ tag }}
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -140,3 +146,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.input-icon-label:focus-within {
+  border-color: var(--bs-primary)!important;
+}
+</style>
