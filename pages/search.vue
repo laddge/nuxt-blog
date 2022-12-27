@@ -7,17 +7,17 @@
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="col-auto fs-5 text-secondary" />
           <input v-model="query.q" class="form-control shadow-none border-0 fs-5 ps-0 py-1 col" placeholder="検索" style="background-color: transparent;">
         </label>
-        <div class="border-top border-bottom mt-4 px-2 py-3" v-if="categories.length + tags.length != 0">
+        <div v-if="categories.length + tags.length != 0" class="border-top border-bottom mt-4 px-2 py-3">
           <div v-if="categories.length != 0">
             <p>カテゴリー:</p>
             <div style="display: flex; flex-wrap: wrap;">
               <div class="form-check">
                 <label class="form-check-label mx-3">
-                  <input type="radio" class="form-check-input shadow-none" value="" checked v-model="query.category">
+                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" value="" checked>
                   未選択
                 </label>
-                <label class="form-check-label mx-3" v-for="cat in categories" :key="cat">
-                  <input type="radio" class="form-check-input shadow-none" :value="cat" checked v-model="query.category">
+                <label v-for="cat in categories" :key="cat" class="form-check-label mx-3">
+                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" :value="cat" checked>
                   {{ cat }}
                 </label>
               </div>
