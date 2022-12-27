@@ -34,7 +34,14 @@
             </nuxt-link>
           </li>
           <li class="nav-item d-flex ms-lg-3 py-0">
-            <a v-for="s in social" :key="s.icon" :href="s.url" target="_blank" class="nav-link text-dark px-1 fs-5">
+            <a
+              v-for="s in social"
+              :key="s.icon"
+              :href="s.url"
+              target="_blank"
+              class="nav-link text-dark px-1 fs-5"
+              :aria-label="s.icon"
+            >
               <font-awesome-icon :icon="['fab', s.icon]" size="lg" />
             </a>
           </li>
