@@ -13,7 +13,8 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' }
+      { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },
+      { rel: 'apple-touch-icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,c_scale,w_180,h_180/v1648961119/laddge.net/laddge.png' }
     ]
   },
 
