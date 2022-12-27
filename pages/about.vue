@@ -11,3 +11,19 @@
     <Footer />
   </div>
 </template>
+
+<script>
+export default {
+  head () {
+    return {
+      title: 'About',
+      meta: [
+        {
+          name: 'description',
+          content: '詳しい自己紹介'
+        }
+      ]
+    }
+  }
+}
+</script>
