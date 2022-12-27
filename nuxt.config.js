@@ -96,7 +96,6 @@ export default {
       'Noto+Sans+JP': [400, 500, 700]
     },
     display: 'swap',
-    download: true,
-    inject: true
+    download: false
   }
 }
