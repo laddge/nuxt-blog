@@ -41,7 +41,8 @@ export default {
     'nuxt-content-git',
     '@nuxt/content',
     '@nuxtjs/date-fns',
-    ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }]
+    ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }],
+    '@nuxtjs/google-fonts'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -88,5 +89,14 @@ export default {
         'faInstagram'
       ]
     }
+  },
+
+  googleFonts: {
+    families: {
+      'Noto+Sans+JP': [400, 500, 700]
+    },
+    display: 'swap',
+    download: true,
+    inject: true
   }
 }
