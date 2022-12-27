@@ -5,7 +5,7 @@
       <h1 class="fw-normal">
         {{ post.title }}
       </h1>
-      <p class="text-secondary fs-5 fw-light mt-3">
+      <p class="text-secondary fs-5 mt-3">
         {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
       </p>
       <p>

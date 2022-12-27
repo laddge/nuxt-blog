@@ -8,7 +8,7 @@
           Hi, I'm Laddge.
         </h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">
+          <p class="lead fw-normal mb-4">
             日本の学生です。<br>
             プログラミングやITに興味があります。
           </p>
@@ -22,7 +22,7 @@
     </div>
     <div class="bg-primary-light pt-4">
       <div class="px-3 py-3 top-rounded bg-white">
-        <h2 class="text-center mb-4">
+        <h2 class="fs-3 text-center mb-4">
           最近の投稿
         </h2>
         <PostsList :posts="posts" />
