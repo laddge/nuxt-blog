@@ -88,7 +88,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: this.post.description
+          content: this.post.description || ''
         }
       ]
     }
