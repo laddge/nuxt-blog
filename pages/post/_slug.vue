@@ -83,14 +83,25 @@ export default {
   },
 
   head () {
+    let ogUrl = 'https://blog-og-tau.vercel.app/api/og?title=' + this.post.title + '&date=' + this.$dateFns.format(new Date(this.post.createdAt), 'yyyy-MM-dd') + '&category=' + this.post.category
+    if (this.post.tags) {
+      ogUrl = ogUrl + '&tags=' + this.post.tags.join(',')
+    }
+    const meta = [
+      { hid: 'og:url', property: 'og:url', content: this.$config.baseUrl + '/post/' + this.post.slug },
+      { hid: 'og:title', property: 'og:title', content: this.post.title + ' - Laddge\'s Blog' },
+      { hid: 'og:image', property: 'og:image', content: ogUrl },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' }
+    ]
+    if (this.post.description) {
+      meta.push(
+        { hid: 'description', name: 'description', content: this.post.description },
+        { hid: 'og:description', property: 'og:description', content: this.post.description }
+      )
+    }
     return {
       title: this.post.title,
-      meta: [
-        {
-          name: 'description',
-          content: this.post.description || ''
-        }
-      ]
+      meta
     }
   }
 }

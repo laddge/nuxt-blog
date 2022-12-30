@@ -18,10 +18,9 @@ export default {
     return {
       title: 'About',
       meta: [
-        {
-          name: 'description',
-          content: '詳しい自己紹介'
-        }
+        { hid: 'description', name: 'description', content: '詳しい自己紹介' },
+        { hid: 'og:url', property: 'og:url', content: this.$config.baseUrl + '/about' },
+        { hid: 'og:description', name: 'og:description', content: '詳しい自己紹介' }
       ]
     }
   }

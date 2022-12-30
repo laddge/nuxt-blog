@@ -1,3 +1,5 @@
+const baseUrl = 'https://laddge.github.io/blog'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -11,7 +13,15 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'description', content: 'Linux大好き高校生'}
+      { hid: 'description', name: 'description', content: 'Linux大好き高校生' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Laddge\'s Blog' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: baseUrl },
+      { hid: 'og:title', property: 'og:title', content: 'Laddge\'s Blog' },
+      { hid: 'og:description', property: 'og:description', content: 'Linux大好き高校生' },
+      { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@laddge_' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },
@@ -58,6 +68,10 @@ export default {
 
   generate: {
     fallback: true
+  },
+
+  publicRuntimeConfig: {
+    baseUrl
   },
 
   content: {

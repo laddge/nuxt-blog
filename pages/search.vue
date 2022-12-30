@@ -59,10 +59,9 @@ export default {
     return {
       title: 'Search',
       meta: [
-        {
-          name: 'description',
-          content: 'ブログ内を検索する'
-        }
+        { hid: 'description', name: 'description', content: 'ブログ内を検索する' },
+        { hid: 'og:url', property: 'og:url', content: this.$config.baseUrl + '/search' },
+        { hid: 'og:description', property: 'og:description', content: 'ブログ内を検索する' }
       ]
     }
   },
