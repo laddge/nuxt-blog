@@ -88,7 +88,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: this.post.description ? this.post.description : 'Linux大好き高校生'
+          content: this.post.description
         }
       ]
     }

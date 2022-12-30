@@ -55,13 +55,7 @@ export default {
 
   head () {
     return {
-      title: 'Home',
-      meta: [
-        {
-          name: 'description',
-          content: 'Linux大好き高校生'
-        }
-      ]
+      title: 'Home'
     }
   }
 }

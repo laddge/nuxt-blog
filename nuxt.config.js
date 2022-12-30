@@ -10,7 +10,8 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'description', content: 'Linux大好き高校生'}
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },

@@ -61,7 +61,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: 'Linux大好き高校生'
+          content: 'ブログ内を検索する'
         }
       ]
     }
