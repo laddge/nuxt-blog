@@ -19,7 +19,7 @@ https://qiita.com/laddge/items/41c3d1e85b4300a6ccf1
 
 ↓サンプル
 
-https://laddge.github.io/classmatch_site/
+<embed-link href="https://laddge.github.io/classmatch_site/"></embed-link>
 
 <note color="danger">
 
@@ -35,7 +35,7 @@ https://laddge.github.io/classmatch_site/
 
 </note>
 
-https://github.com/laddge/classmatch_site
+<embed-link href="https://github.com/laddge/classmatch_site"></embed-link>
 
 ## 動機
 うちの高校では、春季、秋季のクラスマッチをそれぞれ6月と9月に行います。
@@ -144,7 +144,7 @@ uuid生成サイトを使ってお手軽に生成しました。
 
 </note>
 
-https://github.com/laddge/classmatch_site
+<embed-link href="https://github.com/laddge/classmatch_site"></embed-link>
 
 ### 環境構築
 サーバー用に、AWS(Amazon Web Service)のEC2を使いました。
@@ -315,7 +315,7 @@ Excelで作ってるのでしょう、よく見るとだんだん縦横の格子
 
 が、説明が大変なので実際のデータを見てください。
 
-https://github.com/laddge/classmatch_site/blob/master/res/tournaments_base.json
+<embed-link href="https://github.com/laddge/classmatch_site/blob/master/res/tournaments_base.json"></embed-link>
 
 15000行近くあります。
 
@@ -328,7 +328,7 @@ https://github.com/laddge/classmatch_site/blob/master/res/tournaments_base.json
 
 メイン画面については、サンプルを用意しました。
 
-https://laddge.github.io/classmatch_site/
+<embed-link href="https://laddge.github.io/classmatch_site/"></embed-link>
 
 ぜひ触ってみてください。
 
@@ -357,7 +357,7 @@ YouTubeライブの埋め込み動画のリンクも、同じように編集画�
 
 そして、フォームに回答があったときに運営がすぐに気づけるように、回答内容をLINE Notifyで通知するようにしました。
 
-https://notify-bot.line.me/ja/
+<embed-link href="https://notify-bot.line.me/ja/"></embed-link>
 
 スクリプトエディタを開いて適当にGASを書きます。
 

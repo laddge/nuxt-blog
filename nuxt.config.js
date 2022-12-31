@@ -54,7 +54,8 @@ export default {
     '@nuxt/content',
     '@nuxtjs/date-fns',
     ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }],
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
