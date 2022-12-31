@@ -14,21 +14,21 @@
           お問い合わせ
         </h2>
         <div class="mb-3">
-          <label class="form-label text-start">
+          <label class="form-label text-start col-12 col-sm-8">
             お名前<span class="text-danger">*</span>
             <input type="text" class="form-control shadow-none" :name="gfName" required>
           </label>
         </div>
         <div class="mb-3">
-          <label class="form-label text-start">
+          <label class="form-label text-start col-12 col-sm-8">
             メールアドレス<span class="text-danger">*</span>
             <input type="email" class="form-control shadow-none" :name="gfEmail" required>
           </label>
         </div>
         <div class="mb-3">
-          <label class="form-label text-start">
+          <label class="form-label text-start col-12 col-sm-8">
             内容<span class="text-danger">*</span>
-            <textarea class="form-control shadow-none" rows="3" :name="gfMessage" required />
+            <textarea class="form-control shadow-none" rows="3" :name="gfMessage" style="resize: none;" required />
           </label>
         </div>
         <button type="submit" class="btn btn-primary-light">
