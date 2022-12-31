@@ -42,7 +42,7 @@
 <script>
 export default {
   async asyncData ({ $content }) {
-    const posts = await $content('post').sortBy('createdAt', 'desc').limit(5).fetch()
+    const posts = await $content('post').sortBy('createdAt', 'desc').limit(3).fetch()
     for (const post of posts) {
       if (!post.category) {
         post.category = '未分類'
