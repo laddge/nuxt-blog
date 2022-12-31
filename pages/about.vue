@@ -19,6 +19,7 @@ export default {
       title: 'About',
       meta: [
         { hid: 'description', name: 'description', content: '詳しい自己紹介' },
+        { hid: 'og:title', property: 'og:title', content: 'About - Laddge\'s Blog' },
         { hid: 'og:url', property: 'og:url', content: this.$config.baseUrl + '/about' },
         { hid: 'og:description', name: 'og:description', content: '詳しい自己紹介' }
       ]

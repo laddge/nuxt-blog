@@ -60,6 +60,7 @@ export default {
       title: 'Search',
       meta: [
         { hid: 'description', name: 'description', content: 'ブログ内を検索する' },
+        { hid: 'og:title', property: 'og:title', content: 'Search - Laddge\'s Blog' },
         { hid: 'og:url', property: 'og:url', content: this.$config.baseUrl + '/search' },
         { hid: 'og:description', property: 'og:description', content: 'ブログ内を検索する' }
       ]

@@ -33,6 +33,11 @@
               About
             </nuxt-link>
           </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link text-dark" to="/contact">
+              Contact
+            </nuxt-link>
+          </li>
           <li class="nav-item d-flex ms-lg-3 py-0">
             <a
               v-for="s in social"
