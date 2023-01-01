@@ -39,7 +39,7 @@ export default {
     }
   },
 
-  async mounted () {
+  async fetch () {
     const url = 'https://embeda.laddge.net/?url=' + this.href
     this.apiData = await this.$axios.$get(url)
   }
