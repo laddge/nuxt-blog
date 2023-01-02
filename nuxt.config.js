@@ -78,7 +78,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-gruvbox-dark.css'
+        theme: 'prism-themes/themes/prism-coldark-dark.css'
       },
       remarkPlugins: (plugins) => {
         const denyList = ['remark-autolink-headings']
