@@ -45,9 +45,9 @@
       <div class="d-none d-lg-block col bg-ligt ps-4">
         <div class="sticky-top mt-4 pt-2">
           <div v-if="post.toc.filter(t => { return t.depth <= 2 }).length > 2" class="px-3 py-3">
-            <p class="fs-5 text-center">
+            <div class="fs-5 text-center">
               - Contents -
-            </p>
+            </div>
             <div class="position-relative">
               <ol class="overflow-auto py-4" style="height: 50vh;">
                 <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id" class="my-1">
