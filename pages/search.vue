@@ -9,7 +9,9 @@
         </label>
         <div v-if="categories.length + tags.length != 0" class="border-top border-bottom mt-4 px-2 py-3">
           <div v-if="categories.length != 0">
-            <div class="mb-2">カテゴリー:</div>
+            <div class="mb-2">
+              カテゴリー:
+            </div>
             <div style="display: flex; flex-wrap: wrap;">
               <div class="form-check">
                 <label class="form-check-label mx-3">
@@ -24,7 +26,9 @@
             </div>
           </div>
           <div v-if="tags.length != 0" class="mt-3">
-            <div class="mb-2">タグ:</div>
+            <div class="mb-2">
+              タグ:
+            </div>
             <div style="display: flex; flex-wrap: wrap;">
               <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
                 <label class="form-check-label">
@@ -34,6 +38,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="my-3 ms-2">
+          ヒット数: {{ posts.length }}
         </div>
       </div>
       <PostsList :posts="posts" />
