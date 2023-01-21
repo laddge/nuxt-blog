@@ -1,41 +1,67 @@
 <template>
   <div>
     <Header />
-    <div class="my-5 text-center px-5 text-break">
-      <h1 class="fw-normal">
-        {{ post.title }}
-      </h1>
-      <p class="text-secondary fs-5 mt-3">
-        {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
-      </p>
-      <p>
-        <nuxt-link :to="'/search?category=' + post.category" class="link-reset text-secondary">
-          <font-awesome-icon :icon="['far', 'folder']" />
-          {{ post.category }}
-        </nuxt-link>
-      </p>
-      <div v-if="post.tags" class="mt-1">
-        <nuxt-link v-for="tag in post.tags" :key="tag" :to="'/search?tags=' + tag" class="link-reset">
-          <div class="badge bg-primary-light rounded-pill text-primary-dark mx-1 fw-normal">
-            {{ tag }}
-          </div>
-        </nuxt-link>
-      </div>
-      <div v-if="post.toc.filter(t => { return t.depth <= 2 }).length > 2" class="bg-light rounded mt-4 px-5 py-3 d-inline-block">
-        <p class="fw-bold mb-2">
-          - Table of Contents -
-        </p>
-        <ol class="mb-0 text-start">
-          <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id">
-            <nuxt-link :to="{ hash: '#' + t.id }" class="link-reset">
-              {{ t.text }}
+    <div class="row w-100 m-0 p-0">
+      <div class="col-lg-9 p-0">
+        <div class="mt-5 text-center px-5 text-break">
+          <h1 class="fw-normal px-lg-5">
+            {{ post.title }}
+          </h1>
+          <p class="text-secondary fs-5 mt-3">
+            {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
+          </p>
+          <p>
+            <nuxt-link :to="'/search?category=' + post.category" class="link-reset text-secondary">
+              <font-awesome-icon :icon="['far', 'folder']" />
+              {{ post.category }}
             </nuxt-link>
-          </li>
-        </ol>
+          </p>
+          <div v-if="post.tags" class="mt-1">
+            <nuxt-link v-for="tag in post.tags" :key="tag" :to="'/search?tags=' + tag" class="link-reset">
+              <div class="badge bg-primary-light rounded-pill text-primary-dark mx-1 fw-normal">
+                {{ tag }}
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="text-center my-5 d-lg-none container">
+          <div v-if="post.toc.filter(t => { return t.depth <= 2 }).length > 2" class="bg-light rounded mt-4 mx-3 px-5 py-3">
+            <p class="fs-5 mb-3">
+              - Contents -
+            </p>
+            <ol class="text-start mb-2">
+              <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id" class="my-1">
+                <nuxt-link :to="{ hash: '#' + t.id }" class="link-reset">
+                  {{ t.text }}
+                </nuxt-link>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="my-5 container px-3 px-lg-5 text-break">
+          <NuxtContent :document="post" />
+        </div>
       </div>
-    </div>
-    <div class="container text-break">
-      <NuxtContent :document="post" />
+      <div class="d-none d-lg-block col bg-ligt ps-4">
+        <div class="sticky-top mt-4 pt-2">
+          <div v-if="post.toc.filter(t => { return t.depth <= 2 }).length > 2" class="px-3 py-3">
+            <p class="fs-5 text-center">
+              - Contents -
+            </p>
+            <div class="position-relative">
+              <ol class="overflow-auto py-4" style="height: 50vh;">
+                <li v-for="t in post.toc.filter(t => { return t.depth <= 2 })" :key="t.id" class="my-1">
+                  <nuxt-link :to="{ hash: '#' + t.id }" class="link-reset">
+                    {{ t.text }}
+                  </nuxt-link>
+                </li>
+              </ol>
+              <div class="position-absolute w-100" style="top: -1px; height: 2.5em; box-shadow: inset 0 2.5em 1em -1em #fff;" />
+              <div class="position-absolute w-100" style="bottom: -1px; height: 2.5em; box-shadow: inset 0 -2.5em 1em -1em #fff;" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div v-if="prev || next" class="border-top border-bottom mt-5 mx-3 pb-3 d-flex flex-wrap">
       <nuxt-link v-if="next" :to="'/post/' + next.slug" class="link-reset d-block mt-3">
