@@ -7,15 +7,15 @@
           <h1 class="fw-normal px-lg-5">
             {{ post.title }}
           </h1>
-          <p class="text-secondary fs-5 mt-3">
+          <div class="text-secondary fs-5 mt-3">
             {{ $dateFns.format(new Date(post.createdAt), 'MMMM dd, yyyy') }}
-          </p>
-          <p>
+          </div>
+          <div class="mt-3">
             <nuxt-link :to="'/search?category=' + post.category" class="link-reset text-secondary">
               <font-awesome-icon :icon="['far', 'folder']" />
               {{ post.category }}
             </nuxt-link>
-          </p>
+          </div>
           <div v-if="post.tags" class="mt-1">
             <nuxt-link v-for="tag in post.tags" :key="tag" :to="'/search?tags=' + tag" class="link-reset">
               <div class="badge bg-primary-light rounded-pill text-primary-dark mx-1 fw-normal">
