@@ -24,15 +24,6 @@
   </div>
 </template>
 
-<style scoped>
-.truncate {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-</style>
-
 <script>
 export default {
   props: {
@@ -54,3 +45,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+</style>
