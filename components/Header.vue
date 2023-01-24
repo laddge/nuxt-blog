@@ -4,19 +4,15 @@
       <nuxt-link class="navbar-brand ms-1 mb-3 mb-lg-0" to="/" aria-label="Blog home">
         <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1670726722/blog/brand.png" height="28" alt="Laddge's Blog">
       </nuxt-link>
-      <button
+      <input type="checkbox" id="headerNavTogglerCheck" class="d-none">
+      <label
+        for="headerNavTogglerCheck"
         class="navbar-toggler mb-3 border-0 shadow-none text-secondary"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#headerNavContent"
-        aria-controls="headerNavContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
       >
         <font-awesome-icon :icon="['fas', 'bars']" size="lg" />
         <font-awesome-icon :icon="['fas', 'xmark']" size="lg" />
-      </button>
-      <div id="headerNavContent" class="collapse navbar-collapse bg-lg-none px-3 rounded">
+      </label>
+      <div id="headerNavContent" class="navbar-collapse bg-lg-none px-3 rounded">
         <ul class="navbar-nav ms-auto my-2 my-lg-0">
           <li class="nav-item">
             <nuxt-link class="nav-link text-dark" to="/">
@@ -71,7 +67,21 @@ export default {
 </script>
 
 <style scoped>
+#headerNavTogglerCheck + label .fa-bars { display: inherit; }
+#headerNavTogglerCheck + label .fa-xmark { display: none; }
+#headerNavTogglerCheck:checked + label .fa-bars { display: none; }
+#headerNavTogglerCheck:checked + label .fa-xmark { display: inherit; }
+
 #headerNavContent {
-  background-color: rgba(179, 189, 200, 10%)
+  background-color: rgba(179, 189, 200, 10%);
 }
+
+@media (max-width: 991.98px) {
+  #headerNavContent {
+    overflow: hidden;
+    height: 0;
+    transition: height .35s ease;
+  }
+}
+#headerNavTogglerCheck:checked + label + #headerNavContent { height: 243px; }
 </style>

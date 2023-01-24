@@ -82,15 +82,6 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   padding: 0.5em 0.75em;
 }
 
-.navbar-toggler {
-  .fa-bars { display: inherit; }
-  .fa-xmark { display: none; }
-  &[aria-expanded='true'] {
-    .fa-bars { display: none; }
-    .fa-xmark { display: inherit; }
-  }
-}
-
 .nuxt-content {
   h1, h2, h3, h4, h5, h6 {
     margin: 1.5em 0 1em 0;
