@@ -2,59 +2,61 @@
   <div>
     <Header />
     <div class="container">
-      <noscript>
+      <no-script>
         <Note color="danger">
-        検索機能を使用するには、JavaScriptを有効にしてください。
+          検索機能を使用するには、JavaScriptを有効にしてください。
         </Note>
-      </noscript>
-      <div class="mx-3 mb-4">
-        <label class="input-icon-label border rounded-pill row align-items-center mx-2">
-          <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="col-auto fs-5 text-secondary" />
-          <input v-model="query.q" class="form-control shadow-none border-0 fs-5 ps-0 py-1 col" placeholder="検索" style="background-color: transparent;">
-        </label>
-        <div v-if="categories.length + tags.length != 0" class="border-top border-bottom mt-4 px-2 py-3">
-          <div v-if="categories.length != 0">
-            <div class="mb-2">
-              カテゴリー:
+      </no-script>
+      <client-only>
+        <div class="mx-3 mb-4">
+          <label class="input-icon-label border rounded-pill row align-items-center mx-2">
+            <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="col-auto fs-5 text-secondary" />
+            <input v-model="query.q" class="form-control shadow-none border-0 fs-5 ps-0 py-1 col" placeholder="検索" style="background-color: transparent;">
+          </label>
+          <div v-if="categories.length + tags.length != 0" class="border-top border-bottom mt-4 px-2 py-3">
+            <div v-if="categories.length != 0">
+              <div class="mb-2">
+                カテゴリー:
+              </div>
+              <div style="display: flex; flex-wrap: wrap;">
+                <div class="form-check">
+                  <label class="form-check-label mx-3">
+                    <input
+                      v-model="query.category"
+                      type="radio"
+                      class="form-check-input shadow-none"
+                      name="category"
+                      value=""
+                      checked
+                    >
+                    未選択
+                  </label>
+                  <label v-for="cat in categories" :key="cat" class="form-check-label mx-3">
+                    <input v-model="query.category" type="radio" class="form-check-input shadow-none" name="category" :value="cat">
+                    {{ cat }}
+                  </label>
+                </div>
+              </div>
             </div>
-            <div style="display: flex; flex-wrap: wrap;">
-              <div class="form-check">
-                <label class="form-check-label mx-3">
-                  <input
-                    v-model="query.category"
-                    type="radio"
-                    class="form-check-input shadow-none"
-                    name="category"
-                    value=""
-                    checked
-                  >
-                  未選択
-                </label>
-                <label v-for="cat in categories" :key="cat" class="form-check-label mx-3">
-                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" name="category" :value="cat">
-                  {{ cat }}
-                </label>
+            <div v-if="tags.length != 0" class="mt-3">
+              <div class="mb-2">
+                タグ:
+              </div>
+              <div style="display: flex; flex-wrap: wrap;">
+                <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
+                  <label class="form-check-label">
+                    <input v-model="query.tags" type="checkbox" :value="tag" class="form-check-input shadow-none">
+                    {{ tag }}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div v-if="tags.length != 0" class="mt-3">
-            <div class="mb-2">
-              タグ:
-            </div>
-            <div style="display: flex; flex-wrap: wrap;">
-              <div v-for="tag in tags" :key="tag" class="mx-3 form-check">
-                <label class="form-check-label">
-                  <input v-model="query.tags" type="checkbox" :value="tag" class="form-check-input shadow-none">
-                  {{ tag }}
-                </label>
-              </div>
-            </div>
+          <div class="my-3 ms-2">
+            ヒット数: {{ posts.length }}
           </div>
         </div>
-        <div class="my-3 ms-2">
-          ヒット数: {{ posts.length }}
-        </div>
-      </div>
+      </client-only>
       <PostsList :posts="posts" />
     </div>
     <Footer />
@@ -95,7 +97,7 @@ export default {
     }
     this.categories = [...new Set(this.categories)]
     this.tags = [...new Set(this.tags)]
-    await this.render()
+    this.posts = posts
   },
 
   head () {
