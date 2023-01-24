@@ -94,11 +94,13 @@ export default {
         'faXmark',
         'faMagnifyingGlass',
         'faChevronLeft',
-        'faChevronRight'
+        'faChevronRight',
+        'faCheck'
       ],
       regular: [
         'faCalendar',
-        'faFolder'
+        'faFolder',
+        'faCopy'
       ],
       brands: [
         'faGithub',

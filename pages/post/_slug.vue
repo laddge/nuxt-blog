@@ -86,6 +86,16 @@
       </nuxt-link>
     </div>
     <Footer />
+    <div id="hidden" class="d-none">
+      <button class="copybtn">
+        <span class="copy-icon">
+          <font-awesome-icon :icon="['far', 'copy']" />
+        </span>
+        <span class="check-icon text-primary d-none">
+          <font-awesome-icon :icon="['fas', 'check']" />
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -129,6 +139,66 @@ export default {
       title: this.post.title,
       meta
     }
+  },
+
+  mounted () {
+    this.$nextTick(() => {
+      for (const el of document.getElementsByClassName('nuxt-content-highlight')) {
+        const hiddenEl = document.getElementById('hidden')
+        const copyBtn = hiddenEl.firstElementChild.cloneNode(true)
+        copyBtn.onclick = (ev) => {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(ev.currentTarget.parentElement.innerText)
+          } else {
+            const range = document.createRange()
+            range.selectNodeContents(ev.currentTarget.parentElement)
+            const sel = window.getSelection()
+            sel.removeAllRanges()
+            sel.addRange(range)
+            document.execCommand('copy')
+            sel.removeAllRanges()
+          }
+          const copyIcon = ev.currentTarget.getElementsByClassName('copy-icon')[0]
+          const checkIcon = ev.currentTarget.getElementsByClassName('check-icon')[0]
+          copyIcon.classList.add('d-none')
+          checkIcon.classList.remove('d-none')
+          setTimeout(() => {
+            checkIcon.classList.add('d-none')
+          }, 2000)
+        }
+        el.onmouseover = (ev) => {
+          const copyIcon = ev.currentTarget.getElementsByClassName('copy-icon')[0]
+          const checkIcon = ev.currentTarget.getElementsByClassName('check-icon')[0]
+          checkIcon.classList.add('d-none')
+          copyIcon.classList.remove('d-none')
+        }
+        el.appendChild(copyBtn)
+      }
+    })
   }
 }
 </script>
+
+<style>
+.nuxt-content-highlight {
+  position: relative;
+}
+
+.nuxt-content-highlight .copybtn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+}
+
+.nuxt-content-highlight:hover .copybtn {
+  display: block;
+}
+</style>
