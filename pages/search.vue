@@ -2,6 +2,11 @@
   <div>
     <Header />
     <div class="container">
+      <noscript>
+        <Note color="danger">
+        検索機能を使用するには、JavaScriptを有効にしてください。
+        </Note>
+      </noscript>
       <div class="mx-3 mb-4">
         <label class="input-icon-label border rounded-pill row align-items-center mx-2">
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="col-auto fs-5 text-secondary" />
@@ -15,11 +20,18 @@
             <div style="display: flex; flex-wrap: wrap;">
               <div class="form-check">
                 <label class="form-check-label mx-3">
-                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" value="" checked>
+                  <input
+                    v-model="query.category"
+                    type="radio"
+                    class="form-check-input shadow-none"
+                    name="category"
+                    value=""
+                    checked
+                  >
                   未選択
                 </label>
                 <label v-for="cat in categories" :key="cat" class="form-check-label mx-3">
-                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" :value="cat" checked>
+                  <input v-model="query.category" type="radio" class="form-check-input shadow-none" name="category" :value="cat">
                   {{ cat }}
                 </label>
               </div>
@@ -62,6 +74,30 @@ export default {
       lock: false
     }
   },
+
+  async fetch () {
+    const posts = await this.$content('post').sortBy('createdAt', 'desc').fetch()
+    let uncategorized = false
+    for (const post of posts) {
+      if (post.category) {
+        this.categories.push(post.category)
+      } else {
+        uncategorized = true
+      }
+      if (post.tags) {
+        for (const tag of post.tags) {
+          this.tags.push(tag)
+        }
+      }
+    }
+    if (uncategorized) {
+      this.categories.push('未分類')
+    }
+    this.categories = [...new Set(this.categories)]
+    this.tags = [...new Set(this.tags)]
+    await this.render()
+  },
+
   head () {
     return {
       title: 'Search',
