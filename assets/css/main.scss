@@ -5,7 +5,7 @@ $secondary: #767676;
 $input-placeholder-color: #767676;
 $headings-line-height: 1.5;
 $line-height-base: 1.75;
-$paragraph-margin-bottom: 2em;
+$paragraph-margin-bottom: 1.5rem;
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/maps";
@@ -84,7 +84,17 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 
 .nuxt-content {
   h1, h2, h3, h4, h5, h6 {
-    margin: 1.5em 0 1em 0;
+    margin: 2em 0 1em 0;
+    padding: 0.25rem 0.75rem;
+  }
+  h1, h2 {
+    border-left: 5px solid $primary;
+  }
+  h3 {
+    border-left: 3px solid $primary;
+  }
+  h4 {
+    border-left: 3px solid $secondary;
   }
   img {
     display: block;
@@ -99,5 +109,8 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     p:last-child {
       margin-bottom: 0;
     }
+  }
+  .nuxt-content-highlight {
+    margin: 1rem 0;
   }
 }
