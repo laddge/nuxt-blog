@@ -2,11 +2,11 @@
   <div>
     <Header />
     <div class="container">
-      <no-script>
-        <Note color="danger">
-          検索機能を使用するには、JavaScriptを有効にしてください。
-        </Note>
-      </no-script>
+      <noscript>
+        <div class="note border-start border-2 border-danger bg-danger-light ms-2 mb-3 p-3">
+        検索機能を使用するには、JavaScriptを有効にしてください。
+        </div>
+      </noscript>
       <client-only>
         <div class="mx-3 mb-4">
           <label class="input-icon-label border rounded-pill row align-items-center mx-2">
@@ -195,5 +195,9 @@ export default {
 <style scoped>
 .input-icon-label:focus-within {
   border-color: var(--bs-primary)!important;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
 }
 </style>

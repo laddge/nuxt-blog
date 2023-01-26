@@ -4,7 +4,7 @@
       <nuxt-link class="navbar-brand ms-1 mb-3 mb-lg-0" to="/" aria-label="Blog home">
         <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1670726722/blog/brand.png" height="28" alt="Laddge's Blog">
       </nuxt-link>
-      <input type="checkbox" id="headerNavTogglerCheck" class="d-none">
+      <input id="headerNavTogglerCheck" type="checkbox" class="d-none">
       <label
         for="headerNavTogglerCheck"
         class="navbar-toggler mb-3 border-0 shadow-none text-secondary"
