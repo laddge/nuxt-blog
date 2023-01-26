@@ -3,9 +3,9 @@
     <Header />
     <div class="container text-center">
       <a href="https://laddge.net/" target="_blank">
-        <button class="btn btn-primary-light btn-lg">
+        <div class="btn btn-primary-light btn-lg">
           Portfolio
-        </button>
+        </div>
       </a>
     </div>
     <Footer />

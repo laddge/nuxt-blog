@@ -13,9 +13,9 @@
             プログラミングやITに興味があります。
           </p>
           <nuxt-link to="/about">
-            <button type="button" class="btn btn-primary-light btn-lg px-4">
+            <div class="btn btn-primary-light btn-lg px-4">
               About me
-            </button>
+            </div>
           </nuxt-link>
         </div>
       </div>
@@ -28,9 +28,9 @@
         <PostsList :posts="posts" />
         <div class="text-center">
           <nuxt-link to="/search">
-            <button class="btn btn-primary-light">
+            <div class="btn btn-primary-light">
               もっと見る
-            </button>
+            </div>
           </nuxt-link>
         </div>
       </div>
