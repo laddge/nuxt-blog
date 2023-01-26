@@ -2,11 +2,11 @@
   <div>
     <Header />
     <div class="container">
-      <noscript>
-        <div class="note border-start border-2 border-danger bg-danger-light ms-2 mb-3 p-3">
-        検索機能を使用するには、JavaScriptを有効にしてください。
-        </div>
-      </noscript>
+      <div class="noscript">
+        <Note color="danger">
+          検索機能を使用するには、JavaScriptを有効にしてください。
+        </Note>
+      </div>
       <client-only>
         <div class="mx-3 mb-4">
           <label class="input-icon-label border rounded-pill row align-items-center mx-2">
@@ -123,35 +123,37 @@ export default {
     }
   },
 
-  async mounted () {
-    const posts = await this.$content('post').sortBy('createdAt', 'desc').fetch()
-    let uncategorized = false
-    for (const post of posts) {
-      if (post.category) {
-        this.categories.push(post.category)
-      } else {
-        uncategorized = true
-      }
-      if (post.tags) {
-        for (const tag of post.tags) {
-          this.tags.push(tag)
+  mounted () {
+    this.$nextTick(async () => {
+      const posts = await this.$content('post').sortBy('createdAt', 'desc').fetch()
+      let uncategorized = false
+      for (const post of posts) {
+        if (post.category) {
+          this.categories.push(post.category)
+        } else {
+          uncategorized = true
+        }
+        if (post.tags) {
+          for (const tag of post.tags) {
+            this.tags.push(tag)
+          }
         }
       }
-    }
-    if (uncategorized) {
-      this.categories.push('未分類')
-    }
-    this.categories = [...new Set(this.categories)]
-    this.tags = [...new Set(this.tags)]
-    await this.render()
-    this.$watch(
-      () => this.$route.query,
-      async (toParams, previousParams) => {
-        this.lock = true
-        await this.render()
-        this.lock = false
+      if (uncategorized) {
+        this.categories.push('未分類')
       }
-    )
+      this.categories = [...new Set(this.categories)]
+      this.tags = [...new Set(this.tags)]
+      await this.render()
+      this.$watch(
+        () => this.$route.query,
+        async (toParams, previousParams) => {
+          this.lock = true
+          await this.render()
+          this.lock = false
+        }
+      )
+    })
   },
 
   methods: {
@@ -195,9 +197,5 @@ export default {
 <style scoped>
 .input-icon-label:focus-within {
   border-color: var(--bs-primary)!important;
-}
-
-.note p:last-child {
-  margin-bottom: 0;
 }
 </style>
