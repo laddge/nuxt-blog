@@ -112,7 +112,13 @@ export default {
     query: {
       handler (query) {
         if (!this.lock) {
-          this.$router.replace({ query })
+          const newQuery = {}
+          for (const key of Object.keys(query)) {
+            if (query[key]) {
+              newQuery[key] = query[key]
+            }
+          }
+          this.$router.replace({ query: newQuery })
         }
       },
       deep: true
