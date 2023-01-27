@@ -51,7 +51,7 @@ export default {
   modules: [
     'nuxt-content-git',
     '@nuxt/content',
-    '@nuxtjs/date-fns',
+    ['@nuxtjs/date-fns', { locales: ['ja'], methods: ['format'] }],
     ['@nuxtjs/fontawesome', { component: 'fontAwesome', suffix: true }],
     '@nuxtjs/google-fonts',
     '@nuxtjs/axios'
