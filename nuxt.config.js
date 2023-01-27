@@ -82,7 +82,10 @@ export default {
       remarkPlugins: (plugins) => {
         const denyList = ['remark-autolink-headings']
         return plugins.filter(plugin => !denyList.includes(plugin))
-      }
+      },
+      rehypePlugins: [
+        '~/plugins/rehype-lazyload.js'
+      ]
     }
   },
 
