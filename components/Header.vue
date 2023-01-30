@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg px-2 py-3">
     <div class="container-fluid">
       <nuxt-link class="navbar-brand ms-1 mb-3 mb-lg-0" to="/" aria-label="Blog home">
-        <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1670726722/blog/brand.png" height="28" alt="Laddge's Blog">
+        <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1674993581/blog/brand.png" height="28" alt="Laddge's Blog">
       </nuxt-link>
       <input id="headerNavTogglerCheck" type="checkbox" class="d-none">
       <label

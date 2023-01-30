@@ -3,7 +3,7 @@
     <div class="bg-primary-light">
       <Header />
       <div class="mt-4 px-4 py-5 text-center">
-        <img src="https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png" width="64" height="64" alt="profile image" class="d-block mx-auto mb-4 rounded">
+        <img src="https://res.cloudinary.com/laddge/image/upload/v1674993750/laddge.net/laddge_vector.svg" width="64" height="64" alt="profile image" class="d-block mx-auto mb-4 rounded">
         <h1 class="display-5 fw-bold mb-3">
           Hi, I'm Laddge.
         </h1>

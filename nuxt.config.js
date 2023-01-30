@@ -19,13 +19,13 @@ export default {
       { hid: 'og:url', property: 'og:url', content: baseUrl },
       { hid: 'og:title', property: 'og:title', content: 'Laddge\'s Blog' },
       { hid: 'og:description', property: 'og:description', content: 'Linux大好き高校生' },
-      { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,b_auto,c_pad,h_630,w_1200/v1674993708/laddge.net/laddge.png' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@laddge_' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1648961119/laddge.net/laddge.png' },
-      { rel: 'apple-touch-icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,c_scale,w_180,h_180/v1648961119/laddge.net/laddge.png' }
+      { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1674993708/laddge.net/laddge.png' },
+      { rel: 'apple-touch-icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,c_scale,w_180,h_180/v1674993708/laddge.net/laddge.png' }
     ]
   },
 
