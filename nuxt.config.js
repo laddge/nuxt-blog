@@ -13,12 +13,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Linux大好き高校生' },
+      { hid: 'description', name: 'description', content: 'コードを書いたりパソコンをいじったりが好きな学生です。日常の出来事や趣味のことなどをを投稿していきます。' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Laddge\'s Blog' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: baseUrl },
       { hid: 'og:title', property: 'og:title', content: 'Laddge\'s Blog' },
-      { hid: 'og:description', property: 'og:description', content: 'Linux大好き高校生' },
+      { hid: 'og:description', property: 'og:description', content: 'コードを書いたりパソコンをいじったりが好きな学生です。日常の出来事や趣味のことなどをを投稿していきます。' },
       { hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,b_auto,c_pad,h_630,w_1200/v1674993708/laddge.net/laddge.png' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@laddge_' }

@@ -9,8 +9,8 @@
         </h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead fw-normal mb-4">
-            日本の学生です。<br>
-            プログラミングやITに興味があります。
+            コードを書いたりパソコンをいじったりが好きな学生です。<br>
+            日常の出来事や趣味のことなどをを投稿していきます。
           </p>
           <nuxt-link to="/about">
             <div class="btn btn-primary-light btn-lg px-4">
