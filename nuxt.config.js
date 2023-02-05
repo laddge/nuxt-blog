@@ -1,4 +1,4 @@
-const baseUrl = 'https://laddge.github.io/blog'
+const baseUrl = 'https://laddge.net'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
