@@ -60,6 +60,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   text-decoration: none;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 @each $name, $color in $theme-colors {
   .bg-#{$name}-light {
     background-color: lighten($color, 45%);

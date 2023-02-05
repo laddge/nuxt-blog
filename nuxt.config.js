@@ -71,7 +71,12 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseUrl
+    baseUrl,
+    social: [
+      { icon: 'github', name: 'laddge', url: 'https://github.com/laddge' },
+      { icon: 'twitter', name: 'laddge_', url: 'https://twitter.com/laddge_' },
+      { icon: 'instagram', name: 'laddge_', url: 'https://instagram.com/laddge_' }
+    ]
   },
 
   content: {

@@ -36,7 +36,7 @@
           </li>
           <li class="nav-item d-flex ms-lg-3 py-0">
             <a
-              v-for="s in social"
+              v-for="s in $config.social"
               :key="s.icon"
               :href="s.url"
               target="_blank"
@@ -51,20 +51,6 @@
     </div>
   </nav>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      social: [
-        { icon: 'github', url: 'https://github.com/laddge' },
-        { icon: 'twitter', url: 'https://twitter.com/laddge_' },
-        { icon: 'instagram', url: 'https://instagram.com/laddge_' }
-      ]
-    }
-  }
-}
-</script>
 
 <style scoped>
 #headerNavTogglerCheck + label .fa-bars { display: inherit; }
