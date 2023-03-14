@@ -44,7 +44,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    'nuxt-purgecss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -77,6 +78,12 @@ export default {
       { icon: 'twitter', name: 'laddge_', url: 'https://twitter.com/laddge_' },
       { icon: 'instagram', name: 'laddge_', url: 'https://instagram.com/laddge_' }
     ]
+  },
+
+  purgeCSS: {
+    enabled: true,
+      whitelistPatterns: [/svg.*/, /fa.*/, /border-.*/, /-light$/],
+      whitelistPatternsChildren: [/^nuxt-content/, /^token/, /^pre/, /^code/]
   },
 
   content: {
