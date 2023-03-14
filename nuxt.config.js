@@ -25,7 +25,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto/v1674993708/laddge.net/laddge.png' },
-      { rel: 'apple-touch-icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,c_scale,w_180,h_180/v1674993708/laddge.net/laddge.png' }
+      { rel: 'apple-touch-icon', type: 'image/png', href: 'https://res.cloudinary.com/laddge/image/upload/f_auto,q_auto,c_scale,w_180,h_180/v1674993708/laddge.net/laddge.png' },
+      { rel: 'preload', as: 'image', href: 'https://res.cloudinary.com/laddge/image/upload/v1678779623/blog/brand.svg'}
     ]
   },
 
