@@ -55,7 +55,8 @@ export default {
 
   head () {
     return {
-      title: 'Home'
+      title: 'Home',
+      link: [{ rel: 'preload', as: 'image', href: 'https://res.cloudinary.com/laddge/image/upload/v1674993750/laddge.net/laddge_vector.svg' }]
     }
   }
 }
